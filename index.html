@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Galeri Foto</h1>
+        
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*" multiple>
+            <label for="imageUpload" class="upload-btn">
+                <span>📷</span>
+                <span>Pilih Foto</span>
+            </label>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery" id="gallery">
+            <!-- Sample Images -->
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=1" alt="Foto 1">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal(this)">Lihat</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=2" alt="Foto 2">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal(this)">Lihat</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=3" alt="Foto 3">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal(this)">Lihat</button>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=4" alt="Foto 4">
+                <div class="overlay">
+                    <button class="view-btn" onclick="openModal(this)">Lihat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-navigation">
+            <button class="nav-btn prev-btn" onclick="navigateImage(-1)">&#10094;</button>
+            <button class="nav-btn next-btn" onclick="navigateImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
