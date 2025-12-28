@@ -9,6 +9,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -203,27 +204,163 @@ h1 {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    body {
+        padding: 15px;
+    }
+
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
+        margin-bottom: 25px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .upload-section {
+        margin-bottom: 25px;
+    }
+
+    .upload-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .upload-btn span:first-child {
+        font-size: 1.3em;
     }
 
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
+        gap: 12px;
+    }
+
+    .gallery-item {
+        border-radius: 10px;
     }
 
     .gallery-item img {
-        height: 180px;
+        height: 150px;
+    }
+
+    /* Show overlay on tap for mobile */
+    .gallery-item:active .overlay {
+        opacity: 1;
     }
 
     .modal-content {
         max-width: 95%;
+        max-height: 80vh;
     }
 
     .close {
         font-size: 40px;
-        right: 20px;
+        right: 15px;
         top: 10px;
+    }
+
+    .nav-btn {
+        font-size: 24px;
+        padding: 10px 15px;
+    }
+
+    .modal-navigation {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .upload-section {
+        margin-bottom: 20px;
+    }
+
+    .upload-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        gap: 8px;
+    }
+
+    .upload-btn span:first-child {
+        font-size: 1.2em;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .gallery-item {
+        border-radius: 8px;
+    }
+
+    .gallery-item img {
+        height: 120px;
+    }
+
+    .view-btn {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+
+    .modal-content {
+        max-width: 98%;
+        max-height: 75vh;
+    }
+
+    .close {
+        font-size: 35px;
+        right: 10px;
+        top: 5px;
+    }
+
+    .nav-btn {
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+
+    .modal-navigation {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .upload-btn {
+        padding: 8px 16px;
+        font-size: 0.85em;
+    }
+
+    .gallery-item img {
+        height: 100px;
+    }
+
+    .close {
+        font-size: 30px;
     }
 }
